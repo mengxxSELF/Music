@@ -1,0 +1,173 @@
+@import "reset";
+@import (reference) "public";
+html,body,.music{
+  font-size: 100px; /* 根字节设置为100px  针对的是640Px 宽度的页面   */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.musicBox{position: relative}
+// 背景图
+.musicBg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../img/poster.jpg") no-repeat center;
+  background-size:cover;
+  -webkit-filter:blur(6px);
+  filter:blur(6px);
+  transform: scale(1.2);
+  z-index: -2;
+  &::after{
+    height: 100%;
+    content:'';
+    display: block;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+  }
+}
+
+// 头部
+header{
+  position: relative;
+  height: 1.2rem;
+  padding: .3rem;
+  background: rgba(0,0,0,.4);
+  .base{
+    width: 4.5rem;
+    img{
+      display: inline-block;
+      width: 1.2rem;
+      height: 1.2rem;
+      vertical-align: top;
+    }
+    p{
+      vertical-align: top;
+      display: inline-block;
+      span{display: block;
+      font-size: .36rem;
+        color: @color-white;
+      }
+    }
+
+  }
+  .btn{
+    .pos(@left: none,@top:50%);
+    .size(.9rem,.9rem);
+    right: .3rem;
+    margin-top: -0.45rem;
+    border-radius: 50%;
+    border: 0.02rem solid #fff;
+    .play{
+      .size(.32rem,.38rem);
+      display: block;
+      .pos();
+      .spriteFn(@y: -3rem);
+      left: 50%;
+      top:50%;
+      margin-left: -.17rem;
+      margin-top: -.19rem;
+    }
+    .pause{
+      display: none;
+      .size(.18rem,.3rem);
+      .spriteFn(@y: -3.6rem);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -.09rem;
+      margin-top: -.15rem;
+      opacity: 0.5;
+    }
+
+
+
+  }
+}
+// 中间
+.main{
+  position: relative;
+  overflow: hidden;
+  padding: .4rem .2rem;
+  color:rgba(255, 255, 255, 0.5);
+  .fontSize(.32rem);
+  .lyric{
+    .pos();
+    width: 100%;
+    .textAlign;
+    line-height: .84rem;
+    p.on{
+      color: @color-green;
+    }
+  }
+
+}
+
+
+
+// 底部
+footer{
+  height: 3rem;
+  margin: 0.2rem;
+}
+.storage{
+  .pos(relative);
+   height: 0.5rem;
+a{
+  .spriteFn();
+  .floatR;
+  .size(.5rem,.44rem);
+  margin-top: 0;
+}
+}
+.progress{
+  position: relative;
+  margin: 0.2rem;
+  height: .8rem;
+  line-height: .8rem;
+  font-size: .24rem;
+  color: @color-white;
+  div{display: block; }
+  //current
+  .current{
+    .pos();
+  }
+  //timeLine
+  .timeLine{
+    position: relative;
+    top:0.38rem;
+    background: @color-gray;
+    .size(4.2rem,0.04rem);
+    .textAlign;
+    margin: 0 auto;
+    span{
+      .pos();
+      background: green;
+      display: block;
+      height: 100%;
+    }
+  }
+  //duration
+  .duration{ .pos(); left: inherit;right: 0}
+}
+.download{
+  position: relative;
+  .size(4.4rem,0.9rem);
+  margin: 0 auto;
+  border-radius: 2.2rem;
+  .textAlign;
+  color:@color-white;
+  line-height: .9rem;
+  background: #31C27C;
+  .fontSize(.36rem);
+  &::after{
+    .size(.68rem,0.68rem);
+    display: block;
+    content: '';
+    background: url('../img/sprite_play.png') no-repeat 0 -6rem;
+    background-size: .8rem 7rem;
+    .pos(@left:0.12rem ,@top:0.12rem)
+  }
+}
+
+

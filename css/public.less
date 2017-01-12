@@ -1,0 +1,32 @@
+@color-white:#fff;
+@color-gray:rgba(255,255,255,.5);
+@color-green:#31C27C;
+.spriteFn(@x:0,@y:0){
+  background: url("../img/sprite_play.png") no-repeat @x @y;
+  background-size: .8rem 7rem;
+}
+// 字体居中函数
+.textAlign(){
+  text-align: center;
+}
+.fontSize(@size){
+  font-size: @size;
+}
+// float
+.floatR{ float: right}
+.floatL{ float:left}
+// 定位函数
+.pos(@pos:absolute,@left:0,@top:0){
+  position: @pos;
+  left:@left;
+  top:@top;
+}
+// 宽高函数
+.size(@width,@height){
+  width: @width;
+  height: @height;
+}
+// margin 函数
+.marg(@margin){
+  margin: @margin;
+}

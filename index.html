@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 快捷键 meta:vp  -->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>音乐在线</title>
+    <!--引入less 样式文件 注意rel后是 stylesheet/less -->
+    <link rel="stylesheet/less" href="css/index.less"/>
+</head>
+<body>
+<section class="music">
+    <div class="musicBg"></div>
+    <audio src="img/demo.mp3"></audio>
+    <!-- audio常用属性
+        autoplay 是否自动播放
+        loop 是否循环播放
+        currentTime 播放了多久 也就是音频的当前时间
+        duration 总播放时间
+        volume 音量控制
+        paused 是否暂停  true 为当前是暂停状态 false 当前是播放状态
+        ended 是否播放完毕
+
+    audio常用方法
+         play() 播放媒体
+         pause()
+         load() 重新加载
+
+    audio常用事件
+        canplay
+        ended
+
+    -->
+    <header>
+        <div class="base">
+            <img src="img/poster.jpg" alt=""/>
+            <p><span>山有木兮</span><span>伦桑</span></p>
+        </div>
+        <div class="btn"><a href="javascript:;" class="play"></a><a href="javascript:;" class="pause"></a></div>
+    </header>
+    <section class="main">
+        <div class="lyric"></div>
+    </section>
+    <footer>
+        <div class="storage">
+            <a href="javascript:;"></a>
+        </div>
+        <div class="progress">
+            <div class="current">00:00</div>
+            <div class="timeLine"><span></span></div>
+            <div class="duration">30:34</div>
+        </div>
+        <div class="download">
+            下载该音乐
+        </div>
+    </footer>
+</section>
+
+
+<!--js 依赖文件 -->
+<!--  对less文件进行编译 -->
+<script src="js/less-2.5.3.min.js"></script>
+<!--相当于移动端jq-->
+<script src="js/zepto.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
